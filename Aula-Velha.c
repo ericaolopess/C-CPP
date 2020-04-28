@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//Falta fazer:
+//Verificar se jogador 1 ganhou
+//Verificar se jogador 2 ganhou
+//Verificar empate = velha
+//Verificar se o campo já foi usado por outro jogador
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 #define LINHAS 3
@@ -53,7 +59,14 @@ int main(int argc, char *argv[]) {
 		switch (pos)
 		{
 			case 1:
-				tabuleiro[0][0] = jogador;
+				if (tabuleiro[0][0] == 0)
+					tabuleiro[0][0] = jogador;
+				else
+				{
+				
+					printf("Campo ja preenchido.");
+					system("pause");
+				}
 				break;
 			case 2:
 				tabuleiro[0][1] = jogador;
