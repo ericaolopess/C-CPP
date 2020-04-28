@@ -41,8 +41,7 @@ int main(int argc, char *argv[]) {
 			jogador = 2;	
 		}
 		
-		
-		printf ("Escolha a posição da jogada de acordo com o tabuleiro abaixo.\n\n\n");
+		printf ("Escolha a posicao da jogada de acordo com o tabuleiro abaixo.\n\n\n");
 	
 		printf (" 1 | 2 | 3 \n");
 		printf (" 4 | 5 | 6 \n");
@@ -85,40 +84,13 @@ int main(int argc, char *argv[]) {
 			default:
 				printf("Digite uma posição valida!!!");
 		}
+		system("cls");
 		
 		printf (" %d | %d | %d \n", tabuleiro[0][0],tabuleiro[0][1],tabuleiro[0][2]);
 		printf (" %d | %d | %d \n", tabuleiro[1][0],tabuleiro[1][1],tabuleiro[1][2]);
 		printf (" %d | %d | %d \n\n\n\n", tabuleiro[2][0],tabuleiro[2][1],tabuleiro[2][2]);
 		
 		jogadas++;
-		
-	}
 	
-	/*recebe os dados
-	for(i=0; i<3; i++)
-	{
-		for(j=0; j<4; j++)
-		{
-			printf("Digite um valor para Matriz[%d][%d]: ", i, j);
-			scanf("%d", &matriz[i][j]);
-		}
 	}
-	
-	//print os dados na tela e exibi a soma
-	for(i=0; i<3; i++)
-	{
-		for(j=0; j<4; j++)
-		{
-			printf("Matriz[%d][%d]: %d - ", i, j, matriz[i][j]);	
-			
-			if (matriz[i][j] == 0)
-			{
-				soma++;	
-		    }
-		}
-		printf("\n");		
-	}
-	
-	printf("A quantidade de zeros na matriz eh: %d.", soma);
-	*/
 }
