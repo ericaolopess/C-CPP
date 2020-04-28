@@ -8,71 +8,81 @@
 
 int main(int argc, char *argv[]) {
 	
-	char tabuleiro [LINHAS][COLUNAS];
+	int tabuleiro [LINHAS][COLUNAS];
 	int i, j;
-	int jogada, pos;
+	int jogadas, pos;
 	
+	//inicializa o tabuleiro
 	for(i=0; i<3; i++)
 	{
 		for(j=0; j<4; j++)
 		{
-			tabuleiro[i][j] = " ";
+			tabuleiro[i][j] = 0;
 		}
 	}
 	
+	// só pode ser exibido 1 vez
 	printf ("___|___|___\n");
 	printf ("___|___|___\n");
 	printf ("   |   |   \n\n\n\n");
 	
-	printf ("Escolha a posição da jogada de acordo com o tabuleiro abaixo.\n\n\n");
-	
-	printf (" 1 | 2 | 3 \n");
-	printf (" 4 | 5 | 6 \n");
-	printf (" 7 | 8 | 9 \n\n\n\n");
-	
-	printf("Digite a posicao: ");
-	scanf("%d", &pos);
-	
-	switch (pos)
-	{
-		case 1:
-			tabuleiro[0][0] = "X";
-			break;
-		case 2:
-			tabuleiro[0][1] = "X";
-			break;
-		case 3:
-			tabuleiro[0][2] = "X";
-			break;
+	//inicializa jogadas
+	jogadas =0;
 
-		case 4:
-			tabuleiro[1][0] = "X";
-			break;
-		case 5:
-			tabuleiro[1][1] = "X";
-			break;
-		case 6:
-			tabuleiro[1][2] = "X";
-			break;
-			
-		case 7:
-			tabuleiro[2][0] = "X";
-			break;
-		case 8:
-			tabuleiro[2][1] = "X";
-			break;
-		case 9:
-			tabuleiro[2][2] = "X";
-			break;
-		default:
-			printf("Digite uma posição valida!!!");
+	
+	while(jogadas < 9)
+	{
+		printf ("Escolha a posição da jogada de acordo com o tabuleiro abaixo.\n\n\n");
+	
+		printf (" 1 | 2 | 3 \n");
+		printf (" 4 | 5 | 6 \n");
+		printf (" 7 | 8 | 9 \n\n\n\n");
+		
+		printf("Digite a posicao: ");
+		scanf("%d", &pos);
+	
+		switch (pos)
+		{
+			case 1:
+				tabuleiro[0][0] = 1;
+				break;
+			case 2:
+				tabuleiro[0][1] = 1;
+				break;
+			case 3:
+				tabuleiro[0][2] = 1;
+				break;
+	
+			case 4:
+				tabuleiro[1][0] = 1;
+				break;
+			case 5:
+				tabuleiro[1][1] = 1;
+				break;
+			case 6:
+				tabuleiro[1][2] = 1;
+				break;
+				
+			case 7:
+				tabuleiro[2][0] = 1;
+				break;
+			case 8:
+				tabuleiro[2][1] = 1;
+				break;
+			case 9:
+				tabuleiro[2][2] = 1;
+				break;
+			default:
+				printf("Digite uma posição valida!!!");
+		}
+		
+		printf (" %d | %d | %d \n", tabuleiro[0][0],tabuleiro[0][1],tabuleiro[0][2]);
+		printf (" %d | %d | %d \n", tabuleiro[1][0],tabuleiro[1][1],tabuleiro[1][2]);
+		printf (" %d | %d | %d \n\n\n\n", tabuleiro[2][0],tabuleiro[2][1],tabuleiro[2][2]);
+		
+		jogadas++;
+		
 	}
-	
-	printf (" %d | %d | %d \n", tabuleiro[0][0],tabuleiro[0][1],tabuleiro[0][2]);
-	printf (" %d | %d | %d \n", tabuleiro[1][0],tabuleiro[1][1],tabuleiro[1][2]);
-	printf (" %d | %d | %d \n\n\n\n", tabuleiro[2][0],tabuleiro[2][1],tabuleiro[2][2]);
-	
-	
 	
 	/*recebe os dados
 	for(i=0; i<3; i++)
