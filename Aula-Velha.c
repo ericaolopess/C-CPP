@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 	
 	int tabuleiro [LINHAS][COLUNAS];
 	int i, j;
-	int jogadas, pos;
+	int jogadas, pos, jogador;
 	
 	//inicializa o tabuleiro
 	for(i=0; i<3; i++)
@@ -32,6 +32,16 @@ int main(int argc, char *argv[]) {
 	
 	while(jogadas < 9)
 	{
+		if(jogadas%2 == 0)
+		{
+			jogador = 1;	
+		}
+		else
+		{
+			jogador = 2;	
+		}
+		
+		
 		printf ("Escolha a posição da jogada de acordo com o tabuleiro abaixo.\n\n\n");
 	
 		printf (" 1 | 2 | 3 \n");
@@ -44,33 +54,33 @@ int main(int argc, char *argv[]) {
 		switch (pos)
 		{
 			case 1:
-				tabuleiro[0][0] = 1;
+				tabuleiro[0][0] = jogador;
 				break;
 			case 2:
-				tabuleiro[0][1] = 1;
+				tabuleiro[0][1] = jogador;
 				break;
 			case 3:
-				tabuleiro[0][2] = 1;
+				tabuleiro[0][2] = jogador;
 				break;
 	
 			case 4:
-				tabuleiro[1][0] = 1;
+				tabuleiro[1][0] = jogador;
 				break;
 			case 5:
-				tabuleiro[1][1] = 1;
+				tabuleiro[1][1] = jogador;
 				break;
 			case 6:
-				tabuleiro[1][2] = 1;
+				tabuleiro[1][2] = jogador;
 				break;
 				
 			case 7:
-				tabuleiro[2][0] = 1;
+				tabuleiro[2][0] = jogador;
 				break;
 			case 8:
-				tabuleiro[2][1] = 1;
+				tabuleiro[2][1] = jogador;
 				break;
 			case 9:
-				tabuleiro[2][2] = 1;
+				tabuleiro[2][2] = jogador;
 				break;
 			default:
 				printf("Digite uma posição valida!!!");
