@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 //Falta fazer:
-
+//Verificar se jogador 1 ganhou
+//Verificar se jogador 2 ganhou
 //Verificar empate = velha
 
 
@@ -15,7 +16,9 @@ int main(int argc, char *argv[]) {
 	
 	int tabuleiro [LINHAS][COLUNAS];
 	int i, j;
-	int jogadas, pos, casa, jogador;
+	int jogadas, pos, casa, jogador, novamente;
+	novamente=1;
+	while(novamente==1){
 	
 	//inicializa o tabuleiro
 	for(i=0; i<3; i++)
@@ -66,34 +69,91 @@ int main(int argc, char *argv[]) {
 				{
 					casa = 1;
 					printf("Campo ja preenchido.");
-					system("pause");
+					
 				}
 				break;
 			case 2:
-				tabuleiro[0][1] = jogador;
+				if (tabuleiro[0][1] == 0)
+					tabuleiro[0][1] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 			case 3:
+				if (tabuleiro[0][2] == 0)
 				tabuleiro[0][2] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 	
 			case 4:
+				if (tabuleiro[1][0] == 0)
 				tabuleiro[1][0] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
+
 				break;
 			case 5:
+				if (tabuleiro[1][1] == 0)
 				tabuleiro[1][1] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 			case 6:
+				if (tabuleiro[1][2] == 0)
 				tabuleiro[1][2] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 				
 			case 7:
+				if (tabuleiro[2][0] == 0)
 				tabuleiro[2][0] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 			case 8:
+				if (tabuleiro[2][1] == 0)
 				tabuleiro[2][1] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 			case 9:
+				if (tabuleiro[2][2] == 0)
 				tabuleiro[2][2] = jogador;
+				else
+				{
+					casa = 1;
+					printf("Campo ja preenchido.");
+					
+				}
 				break;
 			default:
 				printf("Digite uma posição valida!!!");
@@ -103,9 +163,9 @@ int main(int argc, char *argv[]) {
 		printf (" %d | %d | %d \n", tabuleiro[0][0],tabuleiro[0][1],tabuleiro[0][2]);
 		printf (" %d | %d | %d \n", tabuleiro[1][0],tabuleiro[1][1],tabuleiro[1][2]);
 		printf (" %d | %d | %d \n\n\n\n", tabuleiro[2][0],tabuleiro[2][1],tabuleiro[2][2]);
-	
 		
-	    if(tabuleiro[1][0] == 1 && tabuleiro[1][1] == 1 && tabuleiro[1][2] == 1){jogadas = 11;}
+		
+		    if(tabuleiro[1][0] == 1 && tabuleiro[1][1] == 1 && tabuleiro[1][2] == 1){jogadas = 11;}
             if(tabuleiro[2][0] == 1 && tabuleiro[2][1] == 1 && tabuleiro[2][2] == 1){jogadas = 11;}
             if(tabuleiro[0][0] == 1 && tabuleiro[1][0] == 1 && tabuleiro[2][0] == 1){jogadas = 11;}
             if(tabuleiro[0][1] == 1 && tabuleiro[1][1] == 1 && tabuleiro[2][1] == 1){jogadas = 11;}
@@ -122,28 +182,25 @@ int main(int argc, char *argv[]) {
             if(tabuleiro[0][0] == 2 && tabuleiro[1][1] == 2 && tabuleiro[2][2] == 2){jogadas = 12;}
             if(tabuleiro[0][2] == 2 && tabuleiro[1][1] == 2 && tabuleiro[2][0] == 2){jogadas = 12;}
 
-			
-		if(jogadas == 11)
-		{
-		
-			printf("Jogador 1 ganhou.");
-			system("pause");
+		   
+		if(jogadas == 11){
+			printf("Jogador 1 ganhou.\n \n \n");
+			printf("Deseja jogar novamente ?  1 sim  2 nao");
+			scanf("%d",&novamente);
 		}
-		
-		if (jogadas == 12)
-		{
-			printf("Jogador 2 ganhou.");
-			system("pause");
+			
+		if (jogadas == 12){
+			printf("Jogador 2 ganhou.\n \n \n");
+			printf("Deseja jogar novamente ?  1 sim  2 nao");
+			scanf("%d",&novamente);
 		}
 		
 		if(casa == 0)
 		    jogadas++;
+		    
+		if(jogadas==9)
+			printf("Empatou \n \n \n");
 		
-		if (jogadas == 9)
-		{
-			printf("Velha.");
-			system("pause");
 		}
-
-    }
+	}
 }
