@@ -10,7 +10,7 @@ int main()
 	
 	sair = 0;
 	
-	//faça enquanto
+	//faça enquanto - estrutura de repetição
 	while(sair==0)
 	{
 	
