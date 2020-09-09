@@ -5,8 +5,8 @@
 
 int main() 
 {
-	int n1, n2, result, opc;
-	int sair;
+	float n1, n2, result ;
+	int sair, opc;
 	
 	sair = 0;
 	
@@ -15,10 +15,10 @@ int main()
 	{
 	
 		printf("Digite um numero");
-		scanf("%d", &n1);
+		scanf("%f", &n1);
 		
 		printf("Digite outro numero");
-		scanf("%d", &n2);	
+		scanf("%f", &n2);	
 		
 		printf("Digite 1-soma 2-subtracao 3-multiplicacao 4-divisao");
 		scanf("%d", &opc);
@@ -27,16 +27,16 @@ int main()
 		switch(opc)
 		{
 			case 1:
-				printf("A soma dos valores eh %d.\n", n1, n2, (n1 + n2));
+				printf("A soma dos valores eh %f.\n", n1, n2, (n1 + n2));
 				break;
 			case 2:
-				printf("%d - %d = %d.\n", n1, n2, (n1 - n2));
+				printf("%f - %f = %f .\n", n1, n2, (n1 - n2));
 				break;
 			case 3:
-				printf("%d * %d = %d.\n", n1, n2, (n1 * n2));
+				printf("%f * %f = %f\n", n1, n2, (n1 * n2));
 				break;
 			case 4:
-				printf("%d / %d = %d.\n", n1, n2, (n1 / n2));
+				printf("%f / %f = %.2f\n", n1, n2, (n1 / n2));
 				break;
 			default:	
 				printf("Opcao Invalida!!!");
@@ -44,9 +44,6 @@ int main()
 		
 		printf("Deseja realizar outra operacao? (0-sim/9-nao)");
 		scanf("%d", &sair);
-		
-		
+				
 	}
-	
-
 }
